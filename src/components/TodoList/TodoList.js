@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Todo from '../Todo/Todo';
+import Todo from '../TodoItem/TodoItem';
 
 import './TodoList.css';
 
@@ -10,6 +10,11 @@ export default class TodoList extends Component {
     return (
 
       <ul>
+        <Todo className="todolist"/>
+        <Todo className="todolist"/>
+        <Todo className="todolist"/>
+        <Todo className="todolist"/>
+        <Todo className="todolist"/>
         <Todo className="todolist"/>
 
       </ul>
