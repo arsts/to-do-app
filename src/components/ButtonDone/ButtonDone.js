@@ -1,10 +1,10 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 
 export default class ButtonDone extends Component {
   render() {
     return (
 
-        <button>Done</button>
+        <input type="checkbox"></input>
 
     )
   }

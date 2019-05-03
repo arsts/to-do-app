@@ -1,10 +1,13 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+
 
 export default class ButtonDelete extends Component {
   render() {
     return (
-
-        <button>X</button>
+      <div>
+        <i class="far fa-trash-alt"></i>
+      </div>
+      
 
     )
   }

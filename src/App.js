@@ -8,7 +8,7 @@ const todosArray = {};
 
 function App() {
   return (
-    <div className="App">
+    <div className="App flex-container">
     <NewTodo /> 
     <TodoList />
     
