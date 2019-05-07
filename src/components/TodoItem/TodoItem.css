@@ -1,10 +1,15 @@
 .list-container {
   display: flex;
   justify-content: space-between;
+  align-items: baseline;
+  
 }
+
+/* flex-children */
 
 p {
   flex-grow: 1;
   text-align: left;
   margin-left: 10px;
 }
+
