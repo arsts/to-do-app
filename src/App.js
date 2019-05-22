@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Todos from './components/Todos/Todos'
 
-export default class App extends Component {
+class App extends Component {
   state= {
     todos: [
       {
@@ -12,7 +12,7 @@ export default class App extends Component {
       {
         id: 2,
         title: 'Walk the dog',
-        completed: false
+        completed: true
       },
       {
         id: 3,
@@ -23,11 +23,24 @@ export default class App extends Component {
   }
 
 
+  // Passed from the very botom in TodoItem, to handle CheckBox
+  markComplete = (id) => {
+    this.setState({ todos: this.state.todos.map(todo => {
+      if(todo.id === id ) { // check if passed id === to actual id
+        todo.completed = !todo.completed // set it to opposite
+      }
+      return todo;
+    }) });
+    
+  }
+
   render() {
     return (
       <div>
-        <Todos />
+        <Todos todos={this.state.todos} markComplete={this.markComplete} />
       </div>
     )
   }
 }
+
+export default App;
