@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import Todos from './components/Todos/Todos'
+import Header from './components/Layout/Header';
+import AddTodo from './components/AddTodo/AddTodo';
 
 class App extends Component {
   state= {
@@ -22,7 +24,7 @@ class App extends Component {
     ]
   }
 
-
+  // TOGGLE COMPLETE
   // Passed from the very botom in TodoItem, to handle CheckBox
   markComplete = (id) => {
     this.setState({ todos: this.state.todos.map(todo => {
@@ -30,14 +32,35 @@ class App extends Component {
         todo.completed = !todo.completed // set it to opposite
       }
       return todo;
-    }) });
+    }) 
+  }); 
+  }
+
+  // DeleteTodo
+  delTodo = (id) => {
+    this.setState({ todos: [...this.state.todos.filter(todo => todo.id !==id)] })
+    
+  }
+
+  // Add Todo
+  addTodo = (title) => {
+    const newTodo = {
+      id:4, 
+      title: title,
+      completed: false
+    }
+    this.setState({ todos: [...this.state.todos, newTodo] })
     
   }
 
   render() {
     return (
       <div>
-        <Todos todos={this.state.todos} markComplete={this.markComplete} />
+        <div className="conatiner">
+          <Header />
+          <AddTodo addTodo={this.addTodo} />
+          <Todos todos={this.state.todos} markComplete={this.markComplete} delTodo={this.delTodo} />
+        </div>
       </div>
     )
   }
